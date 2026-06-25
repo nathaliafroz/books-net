@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Book.Net</title>
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <link href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css)" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
+
+    <nav class="bg-brand-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-book-open text-2xl mr-2 text-brand-500"></i>
+                    <span class="font-bold text-xl tracking-wider">Book.Net</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Dashboard</a>
+                    <a href="catalogo.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors bg-brand-600">Catálogo</a>
+                    <a href="cadastro.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Cadastros</a>
+                    <a href="operacoes.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Operações</a>
+                </div>
+
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleMenuMobile()" class="text-white hover:text-gray-300 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-900 border-t border-brand-600 pb-3">
+            <a href="index.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium">Dashboard</a>
+            <a href="catalogo.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium bg-brand-600">Catálogo</a>
+            <a href="cadastro.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium">Cadastros</a>
+            <a href="operacoes.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium">Operações</a>
+        </div>
+    </nav>
+
+    <main class="grow max-w-7xl mx-auto w-full p-4 sm:p-6 lg:p-8">
+        <section id="listagem">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+                <h2 class="text-2xl font-bold text-gray-800">Catálogo de Livros</h2>
+                <a href="cadastro.html?aba=livro" class="bg-brand-600 hover:bg-brand-500 text-white font-medium py-2 px-4 rounded-lg shadow-sm flex items-center">
+                    <i class="fa-solid fa-plus mr-2"></i> Adicionar Livro
+                </a>
+            </div>
+
+            <div class="bg-white shadow-sm rounded-lg border border-gray-200 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Livro / Autor</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Assunto</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status / Origem</th>
+                                <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <!-- Item 1 -->
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="shrink-0 h-10 w-10 bg-gray-100 rounded flex items-center justify-center text-gray-500">
+                                            <i class="fa-solid fa-book"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-bold text-gray-900">Clean Code</div>
+                                            <div class="text-sm text-gray-500">Robert C. Martin</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm text-gray-900">Desenvolvimento</span></td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">Aluguel</span>
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-purple-100 text-purple-800 mt-1 sm:mt-0">Importado</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button class="text-indigo-600 hover:text-indigo-900 mr-3" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="text-red-600 hover:text-red-900" title="Remover"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <!-- Item 2 -->
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="shrink-0 h-10 w-10 bg-gray-100 rounded flex items-center justify-center text-gray-500">
+                                            <i class="fa-solid fa-database"></i>
+                                        </div>
+                                        <div class="ml-4">
+                                            <div class="text-sm font-bold text-gray-900">Sistemas de Banco de Dados</div>
+                                            <div class="text-sm text-gray-500">Elmasri & Navathe</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap"><span class="text-sm text-gray-900">Banco de Dados</span></td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Venda</span>
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800 mt-1 sm:mt-0">Nacional</span>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                    <button class="text-indigo-600 hover:text-indigo-900 mr-3" title="Editar"><i class="fa-solid fa-pen-to-square"></i></button>
+                                    <button class="text-red-600 hover:text-red-900" title="Remover"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400 py-6 text-center text-sm mt-auto">
+        <p>&copy; 2024 Book.Net Livraria de Informática.</p>
+    </footer>
+
+    <!-- Script Importado -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

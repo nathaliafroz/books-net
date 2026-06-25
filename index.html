@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Book.Net</title>
+    <!-- Link para o CSS compilado pelo Tailwind -->
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <link href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css)" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
+
+    <nav class="bg-brand-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-book-open text-2xl mr-2 text-brand-500"></i>
+                    <span class="font-bold text-xl tracking-wider">Book.Net</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors bg-brand-600">Dashboard</a>
+                    <a href="catalogo.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Catálogo</a>
+                    <a href="cadastro.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Cadastros</a>
+                    <a href="operacoes.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Operações</a>
+                </div>
+
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleMenuMobile()" class="text-white hover:text-gray-300 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-900 border-t border-brand-600 pb-3">
+            <a href="index.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium bg-brand-600">Dashboard</a>
+            <a href="catalogo.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium">Catálogo</a>
+            <a href="cadastro.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium">Cadastros</a>
+            <a href="operacoes.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium">Operações</a>
+        </div>
+    </nav>
+
+    <main class="grow max-w-7xl mx-auto w-full p-4 sm:p-6 lg:p-8">
+        <section id="dashboard" class="page-section block">
+            <div class="bg-white rounded-2xl shadow-sm p-6 md:p-10 mb-8 border border-gray-100 relative overflow-hidden">
+                <div class="relative z-10 md:w-2/3">
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-brand-900 mb-4">Bem-vindo à Book.Net</h1>
+                    <p class="text-lg text-gray-600 mb-6">O maior acervo de informática com mais de 4.500 livros sobre desenvolvimento, banco de dados, redes e muito mais. Gerencie aluguéis e vendas em um só lugar.</p>
+                    <a href="catalogo.html" class="inline-block bg-brand-600 hover:bg-brand-500 text-white font-semibold py-3 px-6 rounded-lg shadow transition-colors">
+                        Ver Catálogo Completo
+                    </a>
+                </div>
+                <div class="hidden md:block absolute right-[-5%] top-[-20%] text-brand-100 opacity-50 pointer-events-none">
+                    <i class="fa-solid fa-laptop-code" style="font-size: 300px;"></i>
+                </div>
+            </div>
+
+            <!-- Cards de Ação Rápida -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="cadastro.html?aba=livro" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow block group">
+                    <div class="bg-blue-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-brand-600 transition-colors">
+                        <i class="fa-solid fa-book-medical text-brand-600 text-xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Novo Livro</h3>
+                    <p class="text-gray-500 text-sm">Cadastre novos títulos no acervo.</p>
+                </a>
+
+                <a href="cadastro.html?aba=cliente" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow block group">
+                    <div class="bg-green-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-600 transition-colors">
+                        <i class="fa-solid fa-user-plus text-green-600 text-xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Novo Cliente</h3>
+                    <p class="text-gray-500 text-sm">Registre leitores para aluguel.</p>
+                </a>
+
+                <a href="catalogo.html" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow block group">
+                    <div class="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-purple-600 transition-colors">
+                        <i class="fa-solid fa-list text-purple-600 text-xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Gerenciar Catálogo</h3>
+                    <p class="text-gray-500 text-sm">Edite ou remova livros do sistema.</p>
+                </a>
+
+                <a href="operacoes.html" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow block group">
+                    <div class="bg-orange-100 w-12 h-12 rounded-lg flex items-center justify-center mb-4 group-hover:bg-orange-600 transition-colors">
+                        <i class="fa-solid fa-clock-rotate-left text-orange-600 text-xl group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Operações</h3>
+                    <p class="text-gray-500 text-sm">Controle aluguéis e reservas.</p>
+                </a>
+            </div>
+
+            <!-- Relatórios -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-800 border-b border-gray-100 pb-2 mb-4 flex items-center">
+                        <i class="fa-solid fa-arrow-trend-up text-green-500 mr-2"></i> Mais Vendidos e Alugados
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between items-center text-sm">
+                            <span class="font-medium text-gray-700">1. Clean Code</span>
+                            <span class="bg-green-100 text-green-800 py-1 px-2 rounded-full text-xs font-bold">150 saídas</span>
+                        </li>
+                        <li class="flex justify-between items-center text-sm border-t border-gray-50 pt-2">
+                            <span class="font-medium text-gray-700">2. Redes de Computadores</span>
+                            <span class="bg-green-100 text-green-800 py-1 px-2 rounded-full text-xs font-bold">120 saídas</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                    <h3 class="text-lg font-bold text-gray-800 border-b border-gray-100 pb-2 mb-4 flex items-center">
+                        <i class="fa-solid fa-arrow-trend-down text-red-500 mr-2"></i> Menos Movimentados
+                    </h3>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between items-center text-sm">
+                            <span class="font-medium text-gray-700">1. Fortran para Iniciantes</span>
+                            <span class="bg-red-100 text-red-800 py-1 px-2 rounded-full text-xs font-bold">2 saídas</span>
+                        </li>
+                        <li class="flex justify-between items-center text-sm border-t border-gray-50 pt-2">
+                            <span class="font-medium text-gray-700">2. Windows 95 Avançado</span>
+                            <span class="bg-red-100 text-red-800 py-1 px-2 rounded-full text-xs font-bold">5 saídas</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400 py-6 text-center text-sm mt-auto">
+        <p>&copy; 2024 Book.Net Livraria de Informática. Todos os direitos reservados.</p>
+        <p class="mt-1">Sistema de Gestão de Vendas e Aluguéis</p>
+    </footer>
+
+    <!-- Script Importado (Único e Centralizado) -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

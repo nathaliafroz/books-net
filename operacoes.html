@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operações - Book.Net</title>
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <link href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css)" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
+
+    <nav class="bg-brand-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center"><i class="fa-solid fa-book-open text-2xl mr-2 text-brand-500"></i><span class="font-bold text-xl tracking-wider">Book.Net</span></div>
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Dashboard</a>
+                    <a href="catalogo.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Catálogo</a>
+                    <a href="cadastro.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Cadastros</a>
+                    <a href="operacoes.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors bg-brand-600">Operações</a>
+                </div>
+                <div class="flex items-center md:hidden"><button onclick="toggleMenuMobile()" class="text-white hover:text-gray-300 focus:outline-none"><i class="fa-solid fa-bars text-2xl"></i></button></div>
+            </div>
+        </div>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-900 border-t border-brand-600 pb-3">
+            <a href="index.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium">Dashboard</a>
+            <a href="catalogo.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium">Catálogo</a>
+            <a href="cadastro.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium">Cadastros</a>
+            <a href="operacoes.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium bg-brand-600">Operações</a>
+        </div>
+    </nav>
+
+    <main class="grow max-w-7xl mx-auto w-full p-4 sm:p-6 lg:p-8">
+        <section id="operacoes">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Controle de Aluguéis e Reservas</h2>
+
+            <div class="bg-white shadow-sm rounded-lg border border-gray-200 overflow-hidden">
+                <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-800"><i class="fa-solid fa-clock-rotate-left text-brand-500 mr-2"></i> Livros Atualmente Alugados / Reservados</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Cliente</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Livro</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Datas / Prazo</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">João Silva</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Clean Code</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <div>Retirada: <span class="font-medium text-gray-700">20/06</span></div><div class="text-xs text-gray-400 mt-1">Devolução: 30/06</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap"><span class="px-3 py-1 inline-flex text-xs font-semibold rounded-full bg-green-100 text-green-800"><i class="fa-regular fa-circle-check mr-1 mt-0.5"></i> No Prazo (faltam 6 dias)</span></td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Maria Oliveira</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Sistemas Operacionais</td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <div>Retirada: <span class="font-medium text-gray-700">05/06</span></div><div class="text-xs text-red-500 font-bold mt-1">Devolução: 15/06</div>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap"><span class="px-3 py-1 inline-flex text-xs font-semibold rounded-full bg-red-100 text-red-800"><i class="fa-solid fa-triangle-exclamation mr-1 mt-0.5"></i> Atrasado (9 dias)</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400 py-6 text-center text-sm mt-auto">
+        <p>&copy; 2024 Book.Net Livraria de Informática.</p>
+    </footer>
+
+    <!-- Script Importado -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

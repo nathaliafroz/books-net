@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastros - Book.Net</title>
+    <link href="./assets/css/style.css" rel="stylesheet">
+    <link href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css)" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans min-h-screen flex flex-col">
+
+    <nav class="bg-brand-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <i class="fa-solid fa-book-open text-2xl mr-2 text-brand-500"></i>
+                    <span class="font-bold text-xl tracking-wider">Book.Net</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="index.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Dashboard</a>
+                    <a href="catalogo.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Catálogo</a>
+                    <a href="cadastro.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors bg-brand-600">Cadastros</a>
+                    <a href="operacoes.html" class="hover:bg-brand-600 px-3 py-2 rounded-md font-medium transition-colors">Operações</a>
+                </div>
+
+                <div class="flex items-center md:hidden">
+                    <button onclick="toggleMenuMobile()" class="text-white hover:text-gray-300 focus:outline-none"><i class="fa-solid fa-bars text-2xl"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-900 border-t border-brand-600 pb-3">
+            <a href="index.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium">Dashboard</a>
+            <a href="catalogo.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium">Catálogo</a>
+            <a href="cadastro.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium bg-brand-600">Cadastros</a>
+            <a href="operacoes.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium">Operações</a>
+        </div>
+    </nav>
+
+    <main class="grow max-w-7xl mx-auto w-full p-4 sm:p-6 lg:p-8">
+        <section id="cadastro">
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">Central de Cadastros</h2>
+            <p class="text-gray-600 mb-6">Selecione o tipo de cadastro que deseja realizar.</p>
+
+            <!-- Abas -->
+            <div class="flex space-x-4 mb-6 border-b border-gray-200">
+                <button id="tab-cliente" onclick="mostrarAba('cliente')" class="py-2 px-4 border-b-2 border-brand-500 font-semibold text-brand-600 transition-colors">
+                    <i class="fa-solid fa-user mr-2"></i> Cliente
+                </button>
+                <button id="tab-livro" onclick="mostrarAba('livro')" class="py-2 px-4 border-b-2 border-transparent font-semibold text-gray-500 hover:text-gray-700 hover:border-gray-300 transition-colors">
+                    <i class="fa-solid fa-book mr-2"></i> Livro
+                </button>
+            </div>
+
+            <div class="max-w-4xl mx-auto xl:mx-0">
+                <!-- FORM CLIENTE -->
+                <div id="container-cliente" class="bg-white shadow-sm rounded-xl border border-gray-200 overflow-hidden block">
+                    <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-lg font-bold text-gray-800"><i class="fa-solid fa-user text-brand-500 mr-2"></i> Cadastro de Cliente</h3>
+                    </div>
+                    <form class="p-6" onsubmit="event.preventDefault(); mostrarNotificacao('Cliente cadastrado com sucesso!'); this.reset();">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="col-span-1 md:col-span-2 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Dados Obrigatórios *</div>
+                            <div class="col-span-1 md:col-span-2"><label class="block text-sm font-medium mb-1">Nome Completo *</label><input type="text" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-brand-500 focus:border-brand-500 text-sm"></div>
+                            <div><label class="block text-sm font-medium mb-1">Identidade / CPF *</label><input type="text" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-brand-500 focus:border-brand-500 text-sm"></div>
+                            <div><label class="block text-sm font-medium mb-1">Data de Nascimento *</label><input type="date" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-brand-500 focus:border-brand-500 text-sm"></div>
+                            <div class="col-span-1 md:col-span-2"><label class="block text-sm font-medium mb-1">Endereço Completo *</label><input type="text" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-brand-500 focus:border-brand-500 text-sm"></div>
+                            <div class="col-span-1 md:col-span-2"><label class="block text-sm font-medium mb-1">Telefone Principal *</label><input type="tel" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-brand-500 focus:border-brand-500 text-sm"></div>
+                            
+                            <div class="col-span-1 md:col-span-2 text-xs font-semibold text-gray-500 uppercase tracking-wider mt-4 mb-2">Dados Opcionais</div>
+                            <div><label class="block text-sm font-medium mb-1">E-mail</label><input type="email" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-brand-500 text-sm"></div>
+                            <div><label class="block text-sm font-medium mb-1">Home-page</label><input type="url" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-brand-500 text-sm"></div>
+                        </div>
+                        <div class="mt-6"><button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2 px-4 rounded-md">Salvar Cliente</button></div>
+                    </form>
+                </div>
+
+                <!-- FORM LIVRO -->
+                <div id="container-livro" class="bg-white shadow-sm rounded-xl border border-gray-200 overflow-hidden hidden">
+                    <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-lg font-bold text-gray-800"><i class="fa-solid fa-book text-brand-500 mr-2"></i> Cadastro de Livro</h3>
+                    </div>
+                    <form class="p-6" onsubmit="event.preventDefault(); mostrarNotificacao('Livro cadastrado com sucesso!'); this.reset();">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="col-span-1 md:col-span-2 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">Dados Obrigatórios *</div>
+                            <div class="col-span-1 md:col-span-2"><label class="block text-sm font-medium mb-1">Nome do Livro *</label><input type="text" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-brand-500 text-sm"></div>
+                            <div><label class="block text-sm font-medium mb-1">ISBN *</label><input type="text" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-brand-500 text-sm"></div>
+                            <div><label class="block text-sm font-medium mb-1">Editora *</label><input type="text" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-brand-500 text-sm"></div>
+                            <div><label class="block text-sm font-medium mb-1">Autor *</label><input type="text" required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:ring-brand-500 text-sm"></div>
+                            <div>
+                                <label class="block text-sm font-medium mb-1">Assunto / Categoria *</label>
+                                <select required class="w-full border border-gray-300 rounded-md py-2 px-3 text-sm">
+                                    <option value="">Selecione...</option><option value="dev">Desenvolvimento</option>
+                                </select>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div><label class="block text-sm font-medium mb-1">Ano Pub. *</label><input type="number" required class="w-full border py-2 px-3 text-sm rounded-md"></div>
+                                <div><label class="block text-sm font-medium mb-1">Estoque *</label><input type="number" required class="w-full border py-2 px-3 text-sm rounded-md"></div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2">
+                                <div>
+                                    <label class="block text-sm font-medium mb-1">Tipo *</label>
+                                    <select required class="w-full border py-2 px-3 text-sm rounded-md"><option value="ambos">Ambos</option></select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-1">Origem *</label>
+                                    <select required class="w-full border py-2 px-3 text-sm rounded-md"><option value="nacional">Nacional</option></select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-6"><button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-2 px-4 rounded-md">Salvar Livro</button></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Toast de Notificação -->
+    <div id="toast" class="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center pointer-events-none">
+        <i class="fa-solid fa-check-circle mr-2 text-xl"></i>
+        <span id="toast-message" class="font-medium">Mensagem salva!</span>
+    </div>
+
+    <!-- Script Importado -->
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
