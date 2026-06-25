@@ -106,14 +106,16 @@
                             <div class="grid grid-cols-2 gap-2">
                                 <div>
                                     <label class="block text-sm font-medium mb-1">Tipo *</label>
-                                    <select required class="w-full border py-2 px-3 text-sm rounded-md">
-                                       <option value="venda">Somente Venda</option>
+                                    <select required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-brand-500 focus:border-brand-500 text-sm">
+                                        <option value="">Selecione...</option>
+                                        <option value="venda">Somente Venda</option>
                                         <option value="aluguel">Somente Aluguel</option>
                                         <option value="ambos">Venda e Aluguel</option>
+                                    </select>
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium mb-1">Origem *</label>
-                                    <select required class="w-full border py-2 px-3 text-sm rounded-md">
+                                    <select required class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring-brand-500 focus:border-brand-500 text-sm">
                                         <option value="">Selecione...</option>
                                         <option value="nacional">Nacional</option>
                                         <option value="importado">Importado</option>
