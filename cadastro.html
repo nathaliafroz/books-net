@@ -29,7 +29,7 @@
                 </div>
             </div>
         </div>
-        <!-- Menu Mobile -->
+        
         <div id="mobile-menu" class="hidden md:hidden bg-brand-900 border-t border-brand-600 pb-3">
             <a href="index.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium">Dashboard</a>
             <a href="catalogo.html" class="block w-full text-left px-4 py-2 hover:bg-brand-600 font-medium">Catálogo</a>
@@ -43,7 +43,7 @@
             <h2 class="text-2xl font-bold text-gray-800 mb-2">Central de Cadastros</h2>
             <p class="text-gray-600 mb-6">Selecione o tipo de cadastro que deseja realizar.</p>
 
-            <!-- Abas -->
+            
             <div class="flex space-x-4 mb-6 border-b border-gray-200">
                 <button id="tab-cliente" onclick="mostrarAba('cliente')" class="py-2 px-4 border-b-2 border-brand-500 font-semibold text-brand-600 transition-colors">
                     <i class="fa-solid fa-user mr-2"></i> Cliente
@@ -54,7 +54,7 @@
             </div>
 
             <div class="max-w-4xl mx-auto xl:mx-0">
-                <!-- FORM CLIENTE -->
+                
                 <div id="container-cliente" class="bg-white shadow-sm rounded-xl border border-gray-200 overflow-hidden block">
                     <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
                         <h3 class="text-lg font-bold text-gray-800"><i class="fa-solid fa-user text-brand-500 mr-2"></i> Cadastro de Cliente</h3>
@@ -76,7 +76,7 @@
                     </form>
                 </div>
 
-                <!-- FORM LIVRO -->
+                
                 <div id="container-livro" class="bg-white shadow-sm rounded-xl border border-gray-200 overflow-hidden hidden">
                     <div class="bg-gray-50 px-6 py-4 border-b border-gray-200">
                         <h3 class="text-lg font-bold text-gray-800"><i class="fa-solid fa-book text-brand-500 mr-2"></i> Cadastro de Livro</h3>
@@ -91,7 +91,12 @@
                             <div>
                                 <label class="block text-sm font-medium mb-1">Assunto / Categoria *</label>
                                 <select required class="w-full border border-gray-300 rounded-md py-2 px-3 text-sm">
-                                    <option value="">Selecione...</option><option value="dev">Desenvolvimento</option>
+                                    <option value="">Selecione...</option>
+                                    <option value="dev">Desenvolvimento</option>
+                                    <option value="db">Banco de Dados</option>
+                                    <option value="net">Redes</option>
+                                    <option value="os">Sistemas Operacionais</option>
+                                    <option value="outros">Outros</option>
                                 </select>
                             </div>
                             <div class="grid grid-cols-2 gap-2">
@@ -101,7 +106,10 @@
                             <div class="grid grid-cols-2 gap-2">
                                 <div>
                                     <label class="block text-sm font-medium mb-1">Tipo *</label>
-                                    <select required class="w-full border py-2 px-3 text-sm rounded-md"><option value="ambos">Ambos</option></select>
+                                    <select required class="w-full border py-2 px-3 text-sm rounded-md">
+                                       <option value="venda">Somente Venda</option>
+                                        <option value="aluguel">Somente Aluguel</option>
+                                        <option value="ambos">Venda e Aluguel</option>
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium mb-1">Origem *</label>
@@ -116,13 +124,13 @@
         </section>
     </main>
 
-    <!-- Toast de Notificação -->
+    
     <div id="toast" class="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center pointer-events-none">
         <i class="fa-solid fa-check-circle mr-2 text-xl"></i>
         <span id="toast-message" class="font-medium">Mensagem salva!</span>
     </div>
 
-    <!-- Script Importado -->
+   
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
